@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f5fcff;
+}
+
+.results {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    color: rgb(56, 56, 56);
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.tableMain {
+    padding: 50px 200px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+h1 {
+    font-size: 35px;
+    color: rgb(56, 56, 56);
+    font-family: consolas;
+    text-shadow: 17px 10px 8px rgba(220, 20, 60, 0.815);
+}
+
+p {
+    font-size: 18px;
+    color: goldenrod;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1.5px;
+}
