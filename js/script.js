@@ -1,32 +1,32 @@
 const elItems = document.querySelector('.items');
 const elSearchInput = document.getElementById('search');
-let users = []
+let users = [];
 
 const getItem = () => {
     fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res => {res.json()
-        .then(res => {
-            users = res;
-            viewResults(users);
+        .then(res => {res.json()
+            .then(res => {
+                users = res
+                viewResults(users);
+            })
+            .catch(err => console.log(`ERROR`, err))
         })
-        .catch(err => console.log('Error'));
-    })
-    .catch(err => console.log('Error'));
+        .catch(err => console.log(`ERROR`, err))
 }
 
-elSearchInput.addEventListener('input', e => {
+elSearchInput.addEventListener('input', (e) => {
     const element = e.target.value.toLowerCase();
-    // console.log(element);
-    const searchFunc = users
+    const searchFunc = users 
         .filter(user => user.name
         .toLowerCase()
         .includes(element))
+
         viewResults(searchFunc)
 })
 
 const viewResults = (arr) => {
+    let output = [];
 
-    let output = []
     arr.forEach(({name, username}) => (output += `
         <tr>
             <td>
@@ -39,10 +39,9 @@ const viewResults = (arr) => {
                     </div>
                 </div>
             </td>
-        </tr>
-    `));
-
-    elItems.innerHTML = output;
+        </tr>        
+    `))
+     elItems.innerHTML = output;   
 }
 
-document.addEventListener('DOMContentLoaded', getItem)
+document.addEventListener('DOMContentLoaded', getItem);
