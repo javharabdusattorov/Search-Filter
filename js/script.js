@@ -2,16 +2,21 @@ const elItems = document.querySelector('.items');
 const elSearchInput = document.getElementById('search');
 let users = [];
 
-const getItem = () => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res => {res.json()
-            .then(res => {
-                users = res
-                viewResults(users);
-            })
-            .catch(err => console.log(`ERROR`, err))
-        })
-        .catch(err => console.log(`ERROR`, err))
+const getItem = async () => {
+    let response = await fetch('https://jsonplaceholder.typicode.com/users');
+    let responseJSON = await response.json();
+    users = responseJSON;
+    viewResults(users);
+    console.log(users);
+
+        // .then(res => {res.json()
+        //     .then(res => {
+        //         users = res
+        //         viewResults(users);
+        //     })
+        //     .catch(err => console.log(`ERROR`, err))
+        // })
+        // .catch(err => console.log(`ERROR`, err))
 }
 
 elSearchInput.addEventListener('input', (e) => {
